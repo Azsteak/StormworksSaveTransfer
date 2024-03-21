@@ -1,0 +1,16 @@
+C:\Users\maxen\source\repos\Stormworks Save Transfer\Stormworks Save Transfer\bin\Debug\Stormworks Save Transfer.exe.config
+C:\Users\maxen\source\repos\Stormworks Save Transfer\Stormworks Save Transfer\bin\Debug\Stormworks Save Transfer.exe
+C:\Users\maxen\source\repos\Stormworks Save Transfer\Stormworks Save Transfer\bin\Debug\Stormworks Save Transfer.pdb
+C:\Users\maxen\source\repos\Stormworks Save Transfer\Stormworks Save Transfer\obj\Debug\MainWindow.g.cs
+C:\Users\maxen\source\repos\Stormworks Save Transfer\Stormworks Save Transfer\obj\Debug\App.g.cs
+C:\Users\maxen\source\repos\Stormworks Save Transfer\Stormworks Save Transfer\obj\Debug\Stormworks Save Transfer_MarkupCompile.cache
+C:\Users\maxen\source\repos\Stormworks Save Transfer\Stormworks Save Transfer\obj\Debug\Stormworks Save Transfer_MarkupCompile.lref
+C:\Users\maxen\source\repos\Stormworks Save Transfer\Stormworks Save Transfer\obj\Debug\MainWindow.baml
+C:\Users\maxen\source\repos\Stormworks Save Transfer\Stormworks Save Transfer\obj\Debug\Stormworks Save Transfer.g.resources
+C:\Users\maxen\source\repos\Stormworks Save Transfer\Stormworks Save Transfer\obj\Debug\Stormworks_Save_Transfer.Properties.Resources.resources
+C:\Users\maxen\source\repos\Stormworks Save Transfer\Stormworks Save Transfer\obj\Debug\Stormworks Save Transfer.csproj.GenerateResource.cache
+C:\Users\maxen\source\repos\Stormworks Save Transfer\Stormworks Save Transfer\obj\Debug\Stormworks Save Transfer.csproj.CoreCompileInputs.cache
+C:\Users\maxen\source\repos\Stormworks Save Transfer\Stormworks Save Transfer\obj\Debug\Stormworks Save Transfer.exe
+C:\Users\maxen\source\repos\Stormworks Save Transfer\Stormworks Save Transfer\obj\Debug\Stormworks Save Transfer.pdb
+C:\Users\maxen\source\repos\Stormworks Save Transfer\Stormworks Save Transfer\obj\Debug\Stormworks Save Transfer.csproj.AssemblyReference.cache
+C:\Users\maxen\source\repos\Stormworks Save Transfer\Stormworks Save Transfer\obj\Debug\GeneratedInternalTypeHelper.g.cs

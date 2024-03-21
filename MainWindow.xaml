@@ -1,0 +1,88 @@
+﻿<Window x:Class="Stormworks_Save_Transfer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Stormworks_Save_Transfer"
+        mc:Ignorable="d"
+        Title="Stormworks Save Transfer" Height="450" Width="800">
+    <Window.Resources>
+        <DataTemplate x:Key="DefaultDataTemplate">
+            <StackPanel>
+                <Grid Margin="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="{Binding Key}" FontWeight="Bold"></Label>
+                    <TextBox Grid.Column="1" Text="{Binding Value}" IsEnabled="False"></TextBox>
+                </Grid>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="BooleanDataTemplate">
+            <StackPanel>
+                <Grid Margin="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="{Binding Key}" FontWeight="Bold"></Label>
+                    <CheckBox Grid.Column="1" x:Name="checkBox" Content="{Binding Value}" IsChecked="{Binding Value}" IsEnabled="False" VerticalAlignment="Center"/>
+                </Grid>
+            </StackPanel>
+        </DataTemplate>
+
+        <local:SavePropertyDataTemplateSelector x:Key="templateSelector" 
+                                                DefaultDataTemplate="{StaticResource DefaultDataTemplate}" 
+                                                BooleanDataTemplate="{StaticResource BooleanDataTemplate}"
+                                                ></local:SavePropertyDataTemplateSelector>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="73*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="button" Content="Open source save file" Margin="0,43,0,0" VerticalAlignment="Top" Click="OpenSourceSave_OnClick" Height="20" HorizontalAlignment="Center" Width="136"/>
+        <Label x:Name="sourceFile_label" Content="No file loaded" HorizontalAlignment="Center" Margin="0,68,0,0" VerticalAlignment="Top" Foreground="Red" Height="26" Width="84"/>
+
+        <Button x:Name="button1" Content="Open destination save file" HorizontalAlignment="Center" Click="OpenDestinationSave_OnClick" Margin="0,125,0,0" VerticalAlignment="Top" Width="160" Height="20"/>
+        <Label x:Name="destinationFile_label" Content="No file loaded" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" Foreground="Red" Height="26" Width="84"/>
+
+        <Button x:Name="copyButton" Content="Copy progression" IsEnabled="False" HorizontalAlignment="Center" Margin="0,334,0,0" VerticalAlignment="Top" Height="20" Width="104" Click="CopyDataButton_OnClick"/>
+        <Button x:Name="exportButton" Content="Overwrite Destination file"  IsEnabled="False" HorizontalAlignment="Center" Margin="0,372,0,0" VerticalAlignment="Top" Click="ExportButton_OnClick"/>
+
+        <Grid Grid.Column="1" Margin="0,0,0,19">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Content="Game Data" HorizontalAlignment="Left"></Label>
+            <CheckBox x:Name="CopyGameData" Content="Copy" VerticalAlignment="Top" Grid.Column="1" IsChecked="False" Click="Checkbox_OnClick" HorizontalAlignment="Center" Width="73"/>
+            <ListBox ItemTemplateSelector="{StaticResource templateSelector}" x:Name="sourceGameData" BorderBrush="Black" HorizontalContentAlignment="Stretch" Margin="0 20 0 0"></ListBox>
+            <Label Content="Difficulty Settings" Grid.Row="1" HorizontalAlignment="Left"></Label>
+            <CheckBox x:Name="CopyDifficultySetting" Content="Copy" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" IsChecked="False"  Click="Checkbox_OnClick"/>
+            <ListBox ItemTemplateSelector="{StaticResource templateSelector}" x:Name="sourceDifficultySetting" BorderBrush="Black" Grid.Row="1" HorizontalContentAlignment="Stretch" Margin="0 20 0 0"></ListBox>
+            <Label Content="Game Mode Settings" Grid.Row="2" HorizontalAlignment="Left"></Label>
+            <CheckBox x:Name="CopyGameModeSetting" Content="Copy" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="2" IsChecked="False"  Click="Checkbox_OnClick"/>
+            <ListBox ItemTemplateSelector="{StaticResource templateSelector}" x:Name="sourceGameModeSetting" BorderBrush="Black" Grid.Row="2" HorizontalContentAlignment="Stretch" Margin="0 20 0 0"></ListBox>
+
+            <Image x:Name="dataArrow"   VerticalAlignment="Center" Grid.Column="1" Source="/32213.png" HorizontalAlignment="Center" Width="73"/>
+            <Image x:Name="difficultyArrow"   VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Source="/32213.png" HorizontalAlignment="Center" Width="73"/>
+            <Image x:Name="modeArrow"   VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Source="/32213.png" HorizontalAlignment="Center" Width="73"/>
+
+
+            <ListBox ItemTemplateSelector="{StaticResource templateSelector}" x:Name="destinationGameData" BorderBrush="Black" Grid.Column="2" Grid.IsSharedSizeScope="True" HorizontalContentAlignment="Stretch" Margin="0 20 0 0"></ListBox>
+            <ListBox ItemTemplateSelector="{StaticResource templateSelector}" x:Name="destinationDifficultySetting" BorderBrush="Black" Grid.Column="2" Grid.Row="1" HorizontalContentAlignment="Stretch" Margin="0 20 0 0"></ListBox>
+            <ListBox ItemTemplateSelector="{StaticResource templateSelector}" x:Name="destinationGameModeSetting" BorderBrush="Black" Grid.Column="2" Grid.Row="2" HorizontalContentAlignment="Stretch" Margin="0 20 0 0"></ListBox>
+        </Grid>
+        <!--<Button Content="Enable save edit" HorizontalAlignment="Center" Margin="0,256,0,0" VerticalAlignment="Top" Click="EnableEdit_OnClick"/>-->
+
+    </Grid>
+</Window>
