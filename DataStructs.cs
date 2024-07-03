@@ -61,8 +61,8 @@ namespace Stormworks_Save_Transfer {
             if (copyDifficulty) SetTagParameters(DifficultySettingsElement, sourceSave.DifficultySettings);
             if (copyGameMode) SetTagParameters(GameModeSettingsElement, sourceSave.GameModeSettings);
 
-            SetTagChildren(ActivePlaylistElement, sourceSave.activePlaylist);
-            SetTagChildren(UnlockedCompsElement, sourceSave.unlockedComps);
+            SetTagChildren(ActivePlaylistElement, sourceSave.activePlaylist, "playlist_name");
+            SetTagChildren(UnlockedCompsElement, sourceSave.unlockedComps, "component_name");
             SetTagChildren(UnlockedResrchElement, sourceSave.unlockedResrch, "r");
 
             SetTileData(DiscoveredTilesElement, sourceSave.discoveredTiles);
