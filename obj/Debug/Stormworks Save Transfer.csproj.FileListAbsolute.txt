@@ -14,3 +14,19 @@ C:\Users\maxen\source\repos\Stormworks Save Transfer\Stormworks Save Transfer\ob
 C:\Users\maxen\source\repos\Stormworks Save Transfer\Stormworks Save Transfer\obj\Debug\Stormworks Save Transfer.pdb
 C:\Users\maxen\source\repos\Stormworks Save Transfer\Stormworks Save Transfer\obj\Debug\Stormworks Save Transfer.csproj.AssemblyReference.cache
 C:\Users\maxen\source\repos\Stormworks Save Transfer\Stormworks Save Transfer\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\Documents\C#\StormworksSaveTransfer\bin\Debug\Stormworks Save Transfer.exe.config
+F:\Documents\C#\StormworksSaveTransfer\bin\Debug\Stormworks Save Transfer.exe
+F:\Documents\C#\StormworksSaveTransfer\bin\Debug\Stormworks Save Transfer.pdb
+F:\Documents\C#\StormworksSaveTransfer\obj\Debug\Stormworks Save Transfer.csproj.AssemblyReference.cache
+F:\Documents\C#\StormworksSaveTransfer\obj\Debug\MainWindow.g.cs
+F:\Documents\C#\StormworksSaveTransfer\obj\Debug\App.g.cs
+F:\Documents\C#\StormworksSaveTransfer\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\Documents\C#\StormworksSaveTransfer\obj\Debug\Stormworks Save Transfer_MarkupCompile.cache
+F:\Documents\C#\StormworksSaveTransfer\obj\Debug\Stormworks Save Transfer_MarkupCompile.lref
+F:\Documents\C#\StormworksSaveTransfer\obj\Debug\MainWindow.baml
+F:\Documents\C#\StormworksSaveTransfer\obj\Debug\Stormworks Save Transfer.g.resources
+F:\Documents\C#\StormworksSaveTransfer\obj\Debug\Stormworks_Save_Transfer.Properties.Resources.resources
+F:\Documents\C#\StormworksSaveTransfer\obj\Debug\Stormworks Save Transfer.csproj.GenerateResource.cache
+F:\Documents\C#\StormworksSaveTransfer\obj\Debug\Stormworks Save Transfer.csproj.CoreCompileInputs.cache
+F:\Documents\C#\StormworksSaveTransfer\obj\Debug\Stormworks Save Transfer.exe
+F:\Documents\C#\StormworksSaveTransfer\obj\Debug\Stormworks Save Transfer.pdb

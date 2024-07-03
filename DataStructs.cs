@@ -13,6 +13,7 @@ namespace Stormworks_Save_Transfer {
         private XElement GameModeSettingsElement;
         private XElement ActivePlaylistElement;
         private XElement UnlockedCompsElement;
+        private XElement UnlockedResrchElement;
 
         private XElement TilesElement;
         private XElement DiscoveredTilesElement;
@@ -30,6 +31,7 @@ namespace Stormworks_Save_Transfer {
         #region Hidden_Progression_Data
         private List<ValueTag> activePlaylist;
         private List<ValueTag> unlockedComps;
+        private List<ValueTag> unlockedResrch;
 
         private List<TileTag> discoveredTiles;
         private List<TileTag> purchasedTiles;
@@ -44,6 +46,7 @@ namespace Stormworks_Save_Transfer {
 
             ActivePlaylistElement = (from elements in GameDataElement.Elements() where elements.Name == "active_playlists" select elements).First();
             UnlockedCompsElement = (from elements in GameDataElement.Elements() where elements.Name == "unlocked_components" select elements).First();
+            UnlockedResrchElement = (from elements in GameDataElement.Elements() where elements.Name == "unlocked_research" select elements).First();
 
             TilesElement = (from elements in docData.Root.Elements() where elements.Name == "tiles" select elements).First();
             Seed = TilesElement.Attributes().First().Value;
@@ -60,6 +63,7 @@ namespace Stormworks_Save_Transfer {
 
             SetTagChildren(ActivePlaylistElement, sourceSave.activePlaylist);
             SetTagChildren(UnlockedCompsElement, sourceSave.unlockedComps);
+            SetTagChildren(UnlockedResrchElement, sourceSave.unlockedResrch, "r");
 
             SetTileData(DiscoveredTilesElement, sourceSave.discoveredTiles);
             SetTileData(PurchasedTilesElement, sourceSave.purchasedTiles);
@@ -74,6 +78,7 @@ namespace Stormworks_Save_Transfer {
 
             activePlaylist = GetTagChildren(ActivePlaylistElement);
             unlockedComps = GetTagChildren(UnlockedCompsElement);
+            unlockedResrch = GetTagChildren(UnlockedResrchElement);
 
             discoveredTiles = GetTileData(DiscoveredTilesElement);
             purchasedTiles = GetTileData(PurchasedTilesElement);
@@ -124,11 +129,20 @@ namespace Stormworks_Save_Transfer {
             return children;
         }
 
-        private void SetTagChildren(XElement tag, List<ValueTag> data) {
+        private void SetTagChildren(XElement tag, List<ValueTag> data, string childrenName = "") {
             tag.RemoveAll();
 
+            XName childName;
+
+            if (string.IsNullOrEmpty(childrenName))
+                childName = tag.Name;
+            else {
+                childName = XName.Get(childrenName);
+            }
+
+
             foreach (ValueTag property in data) {
-                XElement newElement = new XElement(tag.Name);
+                XElement newElement = new XElement(childName);
                 newElement.SetAttributeValue(property.attributeName, property.Value);
                 tag.Add(newElement);
             }
